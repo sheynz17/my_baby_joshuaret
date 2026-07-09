@@ -1,0 +1,206 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Press Start 2P', cursive;
+}
+
+body{
+    background:#071426;
+    color:white;
+    overflow:hidden;
+}
+
+/* GRID */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:40px 40px;
+    animation:gridMove 8s linear infinite;
+    z-index:-2;
+}
+
+@keyframes gridMove{
+    from{transform:translateY(0);}
+    to{transform:translateY(40px);}
+}
+
+/* STARS */
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+}
+
+/* SCREENS FIX (IMPORTANT) */
+section{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#loginScreen{
+    opacity:1;
+}
+
+#homeScreen{
+    opacity:0;
+    pointer-events:none;
+}
+
+/* LOGIN */
+.loginBox{
+    width:500px;
+    max-width:90%;
+    background:#111;
+    border:5px solid white;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 0 30px #56c8ff;
+}
+
+.subtitle{
+    color:#d6d6d6;
+    margin:25px 0;
+    font-size:11px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    background:#000;
+    color:white;
+    border:4px solid white;
+    text-align:center;
+}
+
+button{
+
+    background:white;
+
+    color:#071426;
+
+    border:none;
+
+    padding:10px 30px;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    transition:.3s;
+
+    font-size:12px;
+
+}
+
+button:hover{
+
+    background:#55c2ff;
+
+    color:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px #55c2ff;
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+/* PHOTO */
+.photoContainer{ position:relative; }
+
+#boyfriend{
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border:8px solid white;
+    box-shadow:0 0 30px #56c8ff;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* STICKERS */
+.sticker{
+    width:55px;
+    position:absolute;
+    animation:bounce 2s infinite;
+}
+
+.star{ top:-20px; left:-20px; }
+.heart{ bottom:-20px; right:-20px; }
+.game{ top:20px; right:-35px; }
+.gift{ bottom:20px; left:-35px; }
+
+/* TEXT */
+h2{
+    margin-top:30px;
+    font-size:24px;
+    text-shadow:0 0 20px #56c8ff;
+}
+
+.welcomeText{
+    margin-top:12px;
+    color:#d6d6d6;
+    font-size:11px;
+}
+
+/* BUTTON */
+.pixelBtn{
+    display:inline-block;
+    position:relative;
+    z-index:10;
+    margin-top:20px;
+    opacity:1 !important;
+    visibility:visible !important;
+}
+
+.pixelBtn:hover{
+    background:#56c8ff;
+    color:white;
+    transform:translateY(-5px);
+}
+
+#homeScreen{
+    display:none;
+    opacity:1;
+    pointer-events:auto;
+}
+
+#homeScreen.active{
+    display:flex;
+}
+
+/* ANIMATIONS */
+@keyframes float{
+    50%{transform:translateY(-10px);}
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-8px);}
+}
+
+#error{
+    margin-top:15px;
+    margin-bottom:15px;
+    min-height:24px;
+    font-size:11px;
+    color:#ff6b6b;
+    text-align:center;
+    line-height:1.5;
+    display:block;
+}

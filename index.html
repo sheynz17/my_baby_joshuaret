@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Page</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="stars"></div>
+
+<!-- LOGIN -->
+<section id="loginScreen">
+    <div class="loginBox">
+        <h1>PLAYER LOGIN</h1>
+
+        <p class="subtitle">Enter the Secret Password</p>
+
+        <input type="password" id="password" placeholder="Type Password">
+
+        <button id="enterBtn">ENTER</button>
+
+        <p id="error"></p>
+    </div>
+</section>
+
+<!-- HOME -->
+<section id="homeScreen">
+    <div class="photoContainer">
+
+        <img src="pichomepage.jpg" id="boyfriend" alt="Boyfriend">
+
+        <img src="download-removebg-preview.png" class="sticker star">
+        <img src="download__1_-removebg-preview.png" class="sticker heart">
+        <img src="download-removebg-preview.png" class="sticker game">
+        <img src="download__1_-removebg-preview.png" class="sticker gift">
+
+    </div>
+
+    <h2>HAPPY BIRTHDAY, JOSHIE</h2>
+
+    <p class="welcomeText">I love you ❤️</p>
+
+    <button id="startQuest" class="pixelBtn">START THE QUEST</button>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

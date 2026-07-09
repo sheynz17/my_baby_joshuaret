@@ -1,0 +1,477 @@
+/* ==========================================
+                GLOBAL
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Press Start 2P', cursive;
+}
+
+body{
+    background:#071426;
+    overflow:hidden;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+/* ==========================================
+            STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#8ec5ff 1px,transparent 1px);
+
+    background-size:80px 80px;
+    background-position:0 0,40px 40px;
+
+    animation:moveStars 60s linear infinite;
+
+    z-index:-3;
+
+}
+
+@keyframes moveStars{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-200px);
+
+    }
+
+}
+
+/* ==========================================
+            MOON
+========================================== */
+
+.moon{
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:#f8f5d8;
+
+    top:60px;
+    right:80px;
+
+    box-shadow:
+    0 0 40px #fff8b5,
+    0 0 80px #fff8b5;
+
+    animation:floatMoon 4s ease-in-out infinite;
+
+}
+
+@keyframes floatMoon{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+            BACK BUTTON
+========================================== */
+
+.back-btn{
+
+    position:fixed;
+
+    top:25px;
+    left:25px;
+
+    padding:14px 20px;
+
+    border:4px solid #7db3ff;
+
+    background:#102343;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+.back-btn:hover{
+
+    background:#7db3ff;
+
+    color:#071426;
+
+}
+
+/* ==========================================
+            CAKE
+========================================== */
+
+.cakeScene{
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.cake{
+
+    position:relative;
+
+    width:280px;
+    height:340px;
+
+}
+
+/* plate */
+
+.plate{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:300px;
+    height:20px;
+
+    left:-10px;
+
+    background:#dfe7ff;
+
+    border-radius:50%;
+
+}
+
+/* layers */
+
+.layer{
+
+    position:absolute;
+
+    width:240px;
+
+    left:20px;
+
+    border:4px solid white;
+
+}
+
+.bottom{
+
+    height:90px;
+
+    bottom:20px;
+
+    background:#ffb8d8;
+
+}
+
+.middle{
+
+    height:70px;
+
+    bottom:105px;
+
+    background:#ffc7df;
+
+}
+
+.top{
+
+    height:55px;
+
+    bottom:170px;
+
+    background:#ffd8ea;
+
+}
+
+/* icing */
+
+.icing{
+
+    position:absolute;
+
+    width:250px;
+
+    height:28px;
+
+    left:15px;
+
+    bottom:220px;
+
+    background:white;
+
+    border-radius:20px;
+
+}
+
+/* candle */
+
+.candle{
+
+    position:absolute;
+
+    width:18px;
+
+    height:75px;
+
+    background:#7db3ff;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:245px;
+
+    border-radius:6px;
+
+}
+
+/* flame */
+
+.flame{
+
+    position:absolute;
+
+    width:24px;
+    height:34px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:-28px;
+
+    background:orange;
+
+    border-radius:50% 50% 50% 50%;
+
+    box-shadow:
+    0 0 25px orange,
+    0 0 45px yellow;
+
+    animation:flicker .18s infinite;
+
+    cursor:pointer;
+
+}
+
+@keyframes flicker{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        scale(.82);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        scale(1);
+
+    }
+
+}
+
+.flame.out{
+
+    opacity:0;
+
+    transform:
+    translateX(-50%)
+    scale(.2);
+
+}
+
+/* ==========================================
+            FINISH HEART
+========================================== */
+
+.finish{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:42px;
+
+    line-height:1.8;
+
+    color:#ffffff;
+
+    text-shadow:
+    0 0 10px #7db3ff,
+    0 0 25px #7db3ff,
+    0 0 45px #7db3ff;
+
+    opacity:0;
+
+    transition:1.5s;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
+.finish.show{
+
+    opacity:1;
+
+    animation:fadeIn 2s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+            CONFETTI
+========================================== */
+
+#confettiContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+.confetti{
+
+    position:absolute;
+
+    width:12px;
+
+    height:18px;
+
+    border-radius:3px;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:
+        translateY(-30px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+    }
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.moon{
+
+    width:110px;
+    height:110px;
+
+    right:20px;
+
+}
+
+.cake{
+
+    transform:scale(.8);
+
+}
+
+.back-btn{
+
+    font-size:10px;
+
+}
+
+}

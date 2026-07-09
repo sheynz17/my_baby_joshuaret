@@ -1,0 +1,345 @@
+/* ===========================
+   PIXEL RECORD PLAYER
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Press Start 2P', cursive;
+}
+
+body{
+    background:#071426;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Pixel Grid Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:32px 32px;
+    pointer-events:none;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:22px;
+    color:#7aa7ff;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    font-size:11px;
+    color:#cfdcff;
+    margin-bottom:40px;
+}
+
+/* ===========================
+   PLAYER
+=========================== */
+
+.record-player{
+
+    width:760px;
+    height:470px;
+
+    position:relative;
+
+    background:#fff8dc;
+
+    border:6px solid #7aa7ff;
+
+    box-shadow:
+        0 0 0 6px #4a6fc8,
+        10px 10px 0 #000;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+   COVER
+=========================== */
+
+.cover-box{
+    position:absolute;
+
+    top:70px;
+    left:70px;
+
+    width:230px;
+    height:230px;
+
+    background:#fff;
+
+    border:5px solid #4a6fc8;
+
+    overflow:hidden;   /* IMPORTANT */
+    z-index:10;
+}
+
+.cover{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+/* ===========================
+   VINYL
+=========================== */
+
+/* ===========================
+   VINYL
+=========================== */
+
+.vinyl-box{
+
+    position:absolute;
+
+    left:205px;
+    top:60px;
+
+    width:260px;
+    height:260px;
+
+    z-index:1;
+
+}
+
+.vinyl{
+
+    position:absolute;
+
+    width:240px;
+
+    left:0;
+    top:0;
+
+    transition:.3s;
+
+}
+
+/* Umiikot lang */
+
+.vinyl.spin{
+
+    animation:spin 3s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ===========================
+   SONG INFO
+=========================== */
+
+.song-info{
+
+    position:absolute;
+
+    top:85px;
+    left:380px;
+
+    width:320px;
+
+    text-align:left;
+
+}
+
+.song-info h2{
+
+    color:#243b75;
+
+    font-size:18px;
+
+    margin-bottom:18px;
+
+}
+
+.song-info p{
+
+    color:#666;
+
+    font-size:11px;
+
+}
+
+/* ===========================
+   PROGRESS
+=========================== */
+
+.progress-container{
+
+    position:absolute;
+
+    left:70px;
+    bottom:110px;
+
+    width:620px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.progress-container span{
+
+    color:#243b75;
+
+    font-size:10px;
+
+}
+
+#progress{
+
+    flex:1;
+
+    cursor:pointer;
+
+    accent-color:#4a6fc8;
+
+}
+
+/* ===========================
+   CONTROLS
+=========================== */
+
+.controls{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:70px;
+
+}
+
+.controls button{
+
+    width:65px;
+    height:65px;
+
+    border:none;
+
+    background:#7aa7ff;
+
+    color:white;
+
+    border:4px solid #4a6fc8;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.2s;
+
+}
+
+.controls button:hover{
+
+    transform:translateY(-3px);
+
+    background:#5d88ef;
+
+}
+
+.controls button:active{
+
+    transform:scale(.95);
+
+}
+
+/* ===========================
+   VOLUME
+=========================== */
+
+.volume{
+
+    position:absolute;
+
+    right:40px;
+
+    bottom:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.volume span{
+
+    font-size:18px;
+
+}
+
+#volume{
+
+    width:130px;
+
+    accent-color:#4a6fc8;
+
+}
+
+/* ===========================
+   BACK BUTTON
+=========================== */
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+
+    padding:12px 18px;
+
+    background:#7aa7ff;
+    border:4px solid #4a6fc8;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.back-btn:hover{
+    background:#5d88ef;
+    transform:translateY(-2px);
+}   

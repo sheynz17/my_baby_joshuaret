@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+
+    <link rel="stylesheet" href="music.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="secondpage.html" class="back-btn">← BACK</a>
+
+<div class="container">
+
+    <h1>🎵 NOW PLAYING 🎵</h1>
+    <p class="subtitle">A song reminded me of you ❤️</p>
+
+    <div class="record-player">
+
+        <!-- Album Cover -->
+        <div class="cover-box">
+            <img src="ab67616d0000b2730027424fa2fc5a269f4aa0d0.jpg" alt="Album Cover" id="cover">
+        </div>
+
+        <!-- Vinyl -->
+        <div class="vinyl-box">
+            <img src="vinyl.png" alt="Vinyl" id="vinyl" class="vinyl">
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+            <h2>Panalangin</h2>
+            <p>Apo Hiking Society</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-container">
+            <span id="currentTime">0:00</span>
+
+            <input
+                type="range"
+                id="progress"
+                value="0"
+                min="0"
+                max="100">
+
+            <span id="duration">0:00</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+
+            <button id="playBtn">▶</button>
+
+        </div>
+
+        <!-- Volume -->
+        <div class="volume">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Hidden Audio -->
+<audio id="audio">
+    <source src="APO Hiking Society - Panalangin (Official Lyric Video).mp3" type="audio/mpeg">
+</audio>
+
+<script src="music.js"></script>
+
+</body>
+</html>

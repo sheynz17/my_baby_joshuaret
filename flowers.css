@@ -1,0 +1,143 @@
+/* ===========================
+   PIXEL FLOWERS PAGE (FIXED)
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Press Start 2P', cursive;
+}
+
+body{
+    background:#071426;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+     overflow-y:auto;   /* 👈 allow vertical scroll */
+    overflow-x:hidden;
+    padding:60px 0; /* 👈 SAFE SPACE TOP & BOTTOM */
+}
+
+/* Pixel Grid */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size:32px 32px;
+    pointer-events:none;
+}
+
+/* ===========================
+   BACK BUTTON
+=========================== */
+
+.back-btn{
+    position:absolute;
+    top:30px;
+    left:30px;
+    padding:12px 18px;
+    background:#7aa7ff;
+    border:4px solid #4c67b5;
+    color:white;
+    text-decoration:none;
+    font-size:10px;
+    transition:.2s;
+}
+
+.back-btn:hover{
+    background:#5b83d9;
+    transform:translateY(-3px);
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    text-align:center;
+    padding:40px 20px; /* 👈 extra breathing room */
+}
+
+h1{
+    color:#7aa7ff;
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    color:#cfdcff;
+    font-size:10px;
+    margin-bottom:40px;
+}
+
+/* ===========================
+   FLOWER AREA (BIGGER + CENTERED)
+=========================== */
+
+.flower-container{
+    position:relative;
+    width:850px;   /* 👈 bigger */
+    height:850px;  /* 👈 bigger */
+    margin:auto;
+}
+
+/* CENTER FLOWER */
+.flower{
+    position:absolute;
+    width:340px; /* 👈 bigger flower */
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    image-rendering:pixelated;
+    animation:floatFlower 3s ease-in-out infinite;
+}
+
+/* ===========================
+   PETALS (EVEN & CLEAN SPACING)
+=========================== */
+
+.petal{
+    position:absolute;
+    width:150px;
+    padding:10px;
+    background:#7aa7ff;
+    border:4px solid #4c67b5;
+    color:white;
+    font-size:8px;
+    line-height:1.8;
+    text-align:center;
+    animation:floatPetal 4s ease-in-out infinite;
+}
+
+/* EVEN CIRCLE STYLE */
+.p1{ top:6%; left:50%; transform:translateX(-50%); }
+.p2{ top:16%; right:16%; }
+.p3{ top:50%; right:6%; transform:translateY(-50%); }
+.p4{ bottom:16%; right:16%; }
+.p5{ bottom:6%; left:50%; transform:translateX(-50%); }
+.p6{ bottom:16%; left:16%; }
+.p7{ top:50%; left:6%; transform:translateY(-50%); }
+.p8{ top:16%; left:16%; }
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes floatFlower{
+    0%{ transform:translate(-50%,-50%); }
+    50%{ transform:translate(-50%,-58%); }
+    100%{ transform:translate(-50%,-50%); }
+}
+
+@keyframes floatPetal{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-8px); }
+    100%{ transform:translateY(0px); }
+}

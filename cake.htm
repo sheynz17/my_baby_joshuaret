@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cake</title>
+
+<link rel="stylesheet" href="cake.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- BACK BUTTON -->
+
+<a href="secondpage.html" class="back-btn">
+    ⬅ BACK
+</a>
+
+<!-- BACKGROUND -->
+
+<div class="stars"></div>
+<div class="moon"></div>
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop autoplay>
+    <source src="Happy Birthday To You! (Traditional) First Time on YouTube.mp3" type="audio/mp3">
+</audio>
+
+<!-- CAKE -->
+
+<div class="cakeScene">
+
+    <div class="cake">
+
+        <!-- Candle -->
+
+        <div class="candle">
+
+            <div class="flame" id="flame"></div>
+
+        </div>
+
+        <!-- Cake Layers -->
+
+        <div class="icing"></div>
+
+        <div class="layer top"></div>
+
+        <div class="layer middle"></div>
+
+        <div class="layer bottom"></div>
+
+        <div class="plate"></div>
+
+    </div>
+
+</div>
+
+<!-- CONFETTI -->
+
+<div id="confettiContainer"></div>
+
+<!-- HIDDEN MESSAGE -->
+
+<div class="finish" id="finish">
+
+    Happy Birthday, Baby!
+
+</div>
+
+<script src="cake.js"></script>
+
+</body>
+
+</html>
